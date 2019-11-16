@@ -203,9 +203,10 @@ INCLUDE(InstallRequiredSystemLibraries)
 #-------------------------------------------------------------------------------
 #	DEPLOY QT DLLS
 #-------------------------------------------------------------------------------
-
-include(windeployqt)
-windeployqt(${TARGET_NAME})
+if(WIN32)
+    include(windeployqt)
+    windeployqt(${TARGET_NAME})
+endif()
 
 #-------------------------------------------------------------------------------
 #	INSTALLER
